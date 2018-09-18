@@ -18,25 +18,25 @@ Visit: http://localhost:3000/
 
 ### Endpoints
 
-**List Items:**
+##### List Items
 GET /content
 Query Parameters: page (ie: ?page=1)
 Returns: [{'title': 'Example title', ...}, {...}, {...}, {...}]
 
-**Display Item:**
+##### Display Item
 GET /content/display/:id
 Returns: {'title': 'Example title', ...}
 
-**Add Item**
+##### Add Item
 POST /content/create
 Variables: title (required), description
 Returns: {'created': 1}
 
-**Update Item**
+##### Update Item
 PUT /content/update/:id
 Variables: title (required), description
 Returns: {'updated': 1}
 
-**Delete Item**
+#### Delete Item
 DELETE /content/delete/:id
 Returns: {'deleted': 1}
