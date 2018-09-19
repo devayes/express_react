@@ -7,8 +7,9 @@ const bodyParser = require('body-parser');
 // https://github.com/chriso/validator.js
 const validator = require('express-validator');
 const paginate = require('express-paginate');
+var cors = require('cors');
 const app = express();
-const port = 3000;
+const port = 3001;
 
 // Local variables.
 // ----------------------------------------
@@ -25,6 +26,7 @@ console.log('Environment:', app.get('env'));
 
 // Middleware
 // ----------------------------------------
+app.use(cors());
 app.use(compression());
 app.use(logger('dev'));
 // for parsing application/json

@@ -14,7 +14,7 @@ NodeJS, NPM/Yarn, MySQL, Postman
 - Run ```$ npm install```
 - Run ```$ node app.js```
 
-Visit: http://localhost:3000/
+Visit: http://localhost:3001/
 
 ### Endpoints
 

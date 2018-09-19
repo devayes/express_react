@@ -13,7 +13,7 @@ module.exports = {
     {
         let q = 'SELECT * FROM `content` WHERE content_id = ? AND deleted_at IS NULL';
         db.query(q, [id], function (err, results, fields) {
-            return callback(err, results);
+            return callback(err, results[0]);
         });
     },
     createContent: function(body, callback) 
