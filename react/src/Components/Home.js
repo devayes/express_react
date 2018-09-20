@@ -5,8 +5,10 @@ import AddItemModal from './Modals/AddItemModal';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
+// https://www.npmjs.com/package/react-alert
+// import { Alert } from 'react-alert'
 
-export default class Home extends React.Component 
+class Home extends React.Component 
 {
   state = {
     items: []
@@ -56,3 +58,5 @@ export default class Home extends React.Component
     )
   }
 }
+
+export default Home;

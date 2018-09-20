@@ -1,6 +1,6 @@
 # Example React App
 
-An example React (v16.5.1) front end for the Express API.
+An example React (v16.5.2) front end for the Express API.
 
 ### Prerequisites
 

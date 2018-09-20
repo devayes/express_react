@@ -40,11 +40,6 @@ export default class EditItemModal extends React.Component
   handleSubmit = (e) => {
     e.preventDefault();
     const {content_id, title, description} = this.state;
-    // Copy object for update.
-    // let item = Object.assign({}, this.state.item);
-    // item.title = form.title;
-    // item.description = form.description;
-    // console.log('Item:', item)
     axios.put(`http://localhost:3001/content/update/${content_id}`, { title: title, description: description })
       .then(res => {
         this.setState((state, props) => ({
@@ -52,7 +47,6 @@ export default class EditItemModal extends React.Component
           item: {...state.item, title: title, description: description}
         }));
       })
-    // Refresh or whatever.
     this.props.onInputChanged();
   }
 
@@ -66,7 +60,6 @@ export default class EditItemModal extends React.Component
           item: {}
         }));
       })
-    // Refresh or whatever.
     this.props.onInputChanged();
   }
 

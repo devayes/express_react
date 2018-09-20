@@ -43,7 +43,6 @@ export default class AddItemModal extends React.Component
           show: false,
         }));
       })
-    // Refresh or whatever.
     this.props.onInputChanged();
   }
 
