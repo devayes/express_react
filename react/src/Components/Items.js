@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 export default class Items extends React.Component 
 {
@@ -25,6 +26,10 @@ export default class Items extends React.Component
   render() {
     return (
         <div>
+          <Helmet>
+            <title>{`${this.state.item.title}`} - Example Express/React App</title>
+            <meta name="description" content={this.state.item.description} />
+          </Helmet>
           <h1>{this.state.item.title}</h1>
           <p>{this.state.item.description}</p>
         </div>

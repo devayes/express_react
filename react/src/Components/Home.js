@@ -4,6 +4,7 @@ import EditItemModal from './Modals/EditItemModal';
 import AddItemModal from './Modals/AddItemModal';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
 
 export default class Home extends React.Component 
 {
@@ -28,6 +29,9 @@ export default class Home extends React.Component
   render() {
     return (
       <div>
+        <Helmet>
+          <title>Example Express/React App</title>
+        </Helmet>
         <AddItemModal onInputChanged={this.onInputChanged}/>
         <h1>Example Items</h1>
         <Table responsive>
