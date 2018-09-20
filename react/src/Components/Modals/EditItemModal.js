@@ -1,5 +1,5 @@
 import React from 'react';
-import { ControlLabel, FormControl, FormGroup, Modal, Button } from 'react-bootstrap';
+import { ControlLabel, FormControl, FormGroup, Modal, Button, Glyphicon } from 'react-bootstrap';
 import axios from 'axios';
 
 export default class EditItemModal extends React.Component 
@@ -47,20 +47,22 @@ export default class EditItemModal extends React.Component
           item: {...state.item, title: title, description: description}
         }));
       })
-    this.props.onInputChanged();
+    this.props.onInputChanged('?updated');
   }
 
   handleDelete = (e) => {
     e.preventDefault();
-    const {content_id} = this.state;
-    axios.delete(`http://localhost:3001/content/delete/${content_id}`)
-      .then(res => {
-        this.setState((state, props) => ({
-          show: false,
-          item: {}
-        }));
-      })
-    this.props.onInputChanged();
+    if (window.confirm('Are you sure you want to delete this item?')){
+      const {content_id} = this.state;
+      axios.delete(`http://localhost:3001/content/delete/${content_id}`)
+        .then(res => {
+          this.setState((state, props) => ({
+            show: false,
+            item: {}
+          }));
+        })
+      this.props.onInputChanged('?deleted');
+    }
   }
 
   render() {
@@ -97,7 +99,9 @@ export default class EditItemModal extends React.Component
             </Modal.Body>
             <Modal.Footer>
               <div className="pull-left">
-                <a className="text-danger" onClick={this.handleDelete}>Delete</a>
+                <a className="text-danger" onClick={this.handleDelete}>
+                  <Glyphicon glyph="remove" /> Delete Item
+                </a>
               </div>
               <Button onClick={this.handleClose}>Close</Button>
               <Button type="submit" bsStyle="primary">Update Item</Button>

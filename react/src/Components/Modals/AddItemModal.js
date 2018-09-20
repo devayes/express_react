@@ -43,7 +43,7 @@ export default class AddItemModal extends React.Component
           show: false,
         }));
       })
-    this.props.onInputChanged();
+    this.props.onInputChanged('/?added');
   }
 
   render() {

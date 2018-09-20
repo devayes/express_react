@@ -2,16 +2,21 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import EditItemModal from './Modals/EditItemModal';
 import AddItemModal from './Modals/AddItemModal';
+import Flash from './UI/Flash';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
 import { Helmet } from 'react-helmet';
-// https://www.npmjs.com/package/react-alert
-// import { Alert } from 'react-alert'
 
 class Home extends React.Component 
 {
-  state = {
-    items: []
+
+  constructor(props, context) 
+  {
+    super(props, context);
+
+    this.state = {
+      items: []
+    }
   }
 
   // Load items on mount.
@@ -24,8 +29,12 @@ class Home extends React.Component
   }
 
   // Reload after changes.
-  onInputChanged = (e) => {
-    window.location.reload();
+  onInputChanged = (loc) => {
+    if (loc) {
+      window.location = loc;
+    } else {
+      window.location.reload();
+    }
   }
 
   render() {
@@ -34,6 +43,7 @@ class Home extends React.Component
         <Helmet>
           <title>Example Express/React App</title>
         </Helmet>
+        <Flash/>
         <AddItemModal onInputChanged={this.onInputChanged}/>
         <h1>Example Items</h1>
         <Table responsive>
