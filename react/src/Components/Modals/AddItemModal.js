@@ -1,5 +1,5 @@
 import React from 'react';
-import { ControlLabel, FormControl, FormGroup, Modal, Button, Clearfix } from 'react-bootstrap';
+import { ControlLabel, FormControl, FormGroup, Modal, Button, Clearfix, Glyphicon } from 'react-bootstrap';
 import axios from 'axios';
 
 export default class AddItemModal extends React.Component 
@@ -50,7 +50,7 @@ export default class AddItemModal extends React.Component
     return (
       <div>
           <Button className="pull-right" bsStyle="success" bsSize="small" onClick={this.handleShow}>
-            Add Item
+            <Glyphicon glyph="plus" /> Add Item
           </Button>
         <Clearfix/>
         <Modal show={this.state.show} onHide={this.handleClose}>

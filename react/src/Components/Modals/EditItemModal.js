@@ -69,7 +69,7 @@ export default class EditItemModal extends React.Component
     return (
       <div>
         <Button bsStyle="primary" bsSize="small" onClick={this.handleShow}>
-          Edit
+          <Glyphicon glyph="pencil" /> Edit
         </Button>
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>

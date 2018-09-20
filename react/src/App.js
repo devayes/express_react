@@ -14,7 +14,7 @@ const App = () => (
           <Col md={12}>
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/display/:itemId" component={Items} />
+            <Route exact path="/view/:itemId" component={Items} />
           </Col>
           </Row>
       </Grid>

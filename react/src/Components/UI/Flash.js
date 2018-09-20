@@ -26,9 +26,9 @@ export default class Flash extends React.Component
   render() {
     if (this.state.show) {
       if (typeof this.state.qs.added !== 'undefined') {
-        return (<FlashMassage show={this.state.show} duration={4500} persistOnHover={true}><Alert bsStyle="warning" onClick={this.handleClose}><p>Item added.</p></Alert></FlashMassage>)
+        return (<FlashMassage show={this.state.show} duration={4500} persistOnHover={true}><Alert bsStyle="success" onClick={this.handleClose}><p>Item added.</p></Alert></FlashMassage>)
       } else if(typeof this.state.qs.updated !== 'undefined') {
-        return (<FlashMassage show={this.state.show} duration={4500} persistOnHover={true}><Alert bsStyle="warning" onClick={this.handleClose}><p>Item updated.</p></Alert></FlashMassage>)
+        return (<FlashMassage show={this.state.show} duration={4500} persistOnHover={true}><Alert bsStyle="success" onClick={this.handleClose}><p>Item updated.</p></Alert></FlashMassage>)
       } else if(typeof this.state.qs.deleted !== 'undefined') {
         return (<FlashMassage show={this.state.show} duration={4500} persistOnHover={true}><Alert bsStyle="warning" onClick={this.handleClose}><p>Item removed.</p></Alert></FlashMassage>)
       } else {

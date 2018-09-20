@@ -57,7 +57,7 @@ class Home extends React.Component
           <tbody>
             { this.state.items.map(item => 
               <tr key={item.content_id}>
-                <td><Link to={`/display/${item.content_id}`}>{item.title}</Link></td>
+                <td><Link to={`/view/${item.content_id}`}>{item.title}</Link></td>
                 <td>{item.description}</td>
                 <td><EditItemModal item={item} onInputChanged={this.onInputChanged}/></td>
               </tr>
