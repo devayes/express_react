@@ -1,6 +1,6 @@
 # Example React application utilizing an Express API
 
-Uses Express v4.16.3 & React v16.5.1?
+Uses Express v4.16.3 & React v16.5.1
 
 ### Prerequisites
 
